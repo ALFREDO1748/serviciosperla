@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PS Cuidados & Nice Accesorios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome para iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0f0f0f;
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+    header {
+      position: relative;
+      height: 100vh;
+      min-height: 640px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #0a0f12 0%, #11191f 100%);
+      overflow: hidden;
+    }
+    .logo-container {
+      position: relative;
+      width: 280px;
+      height: 280px;
+      margin-bottom: 2.5rem;
+    }
+    .logo {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 22vw;
+      font-weight: 700;
+      color: transparent;
+      background: linear-gradient(90deg, #26c6a0 0%, #00897b 50%, #26c6a0 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      letter-spacing: -0.04em;
+      text-shadow: 0 0 40px rgba(38,198,160,0.25);
+      transition: all 1.2s ease;
+    }
+    .tagline { font-size: 1.35rem; font-weight: 300; color: #a0a0a0; letter-spacing: 3px; text-transform: uppercase; margin-top: 1rem; }
+    .subtitle { font-size: 1.1rem; max-width: 580px; margin: 2.5rem auto 3.5rem; color: #b0b0b0; padding: 0 1.5rem; }
+    main { padding: 5rem 1.5rem; max-width: 1200px; margin: 0 auto; }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      color: #26c6a0;
+      text-align: center;
+      margin-bottom: 3.5rem;
+      position: relative;
+    }
+    h2::after {
+      content: '';
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #26c6a0, transparent);
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.8rem;
+    }
+    .card {
+      background: #161b20;
+      border-radius: 16px;
+      padding: 1.8rem;
+      border: 1px solid #222c34;
+      transition: all 0.35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: #26c6a0;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(38,198,160,0.12);
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 1.2rem;
+      display: block;
+    }
+    .card h3 { font-size: 1.35rem; color: #e8e8e8; margin-bottom: 1rem; }
+    .card ul { list-style: none; font-size: 0.98rem; color: #c0c0c0; }
+    .card ul li { margin-bottom: 0.6rem; position: relative; padding-left: 1.6rem; }
+    .card ul li::before { content: "•"; color: #26c6a0; position: absolute; left: 0; font-size: 1.4rem; line-height: 1; }
+    .note { font-size: 0.9rem; color: #888; margin-top: 1.2rem; font-style: italic; }
+    
+    /* Galería de trabajos realizados */
+    .gallery-section {
+      margin: 7rem 0;
+      background: #161b20;
+      padding: 3rem 2rem;
+      border-radius: 16px;
+      border: 1px solid #222c34;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .gallery-grid img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: transform 0.4s ease;
+    }
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+    }
+    .gallery-caption {
+      text-align: center;
+      margin-top: 0.8rem;
+      font-size: 0.95rem;
+      color: #a0a0a0;
+    }
+
+    /* Reseñas */
+    .reviews-section {
+      margin-top: 6rem;
+      background: #161b20;
+      padding: 3rem 2rem;
+      border-radius: 16px;
+      border: 1px solid #222c34;
+    }
+    .reviews-section form {
+      max-width: 600px;
+      margin: 2rem auto 0;
+    }
+    .reviews-section input, .reviews-section textarea {
+      width: 100%;
+      padding: 0.9rem;
+      margin-bottom: 1rem;
+      border: 1px solid #333;
+      border-radius: 8px;
+      background: #0f1418;
+      color: #e0e0e0;
+      font-size: 1rem;
+    }
+    .reviews-section button {
+      background: #26c6a0;
+      color: #000;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .reviews-section button:hover { background: #00897b; transform: translateY(-2px); }
+
+    footer {
+      text-align: center;
+      padding: 4rem 1.5rem 3rem;
+      color: #777;
+      font-size: 0.95rem;
+      border-top: 1px solid #222;
+    }
+    .social-icons {
+      margin: 1.5rem 0;
+    }
+    .social-icons a {
+      color: #26c6a0;
+      font-size: 2rem;
+      margin: 0 1.2rem;
+      transition: all 0.3s;
+    }
+    .social-icons a:hover { color: #00897b; transform: translateY(-4px); }
+    .contact { margin-top: 2rem; font-size: 1.1rem; color: #26c6a0; }
+
+    @media (max-width: 600px) {
+      .logo-container { width: 220px; height: 220px; }
+      .logo { font-size: 28vw; }
+      h2 { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-container">
+    <div class="logo">PS</div>
+  </div>
+  <div class="tagline">Cuidados Profesionales • Nice Accesorios</div>
+  <p class="subtitle">
+    Atención personalizada en el hogar + joyería y accesorios con estilo
+  </p>
+</header>
+
+<main>
+  <h2>Servicios Profesionales de Cuidados</h2>
+  
+  <div class="services-grid">
+    <div class="card">
+      <img src="https://thumbs.dreamstime.com/b/enfermera-tomando-la-presi%C3%B3n-arterial-de-un-anciano-en-una-cama-hospital-prestador-atenci%C3%B3n-salud-mide-paciente-centro-m%C3%A9dico-384941804.jpg" alt="Toma de signos vitales">
+      <h3>Toma de signos vitales</h3>
+      <ul>
+        <li>Presión arterial</li>
+        <li>Frecuencia respiratoria</li>
+        <li>Frecuencia cardíaca</li>
+        <li>Temperatura corporal</li>
+        <li>Saturación parcial de oxígeno (SpO₂)</li>
+      </ul>
+    </div>
+    
+    <div class="card">
+      <img src="https://image.tuasaude.com/media/article/rp/rj/toma-de-glucemia-capilar_46150.jpg?width=686&height=487" alt="Toma de glicemia capilar">
+      <h3>Toma de glicemia capilar</h3>
+      <p>Medición rápida y precisa de glucosa en sangre.</p>
+    </div>
+    
+    <div class="card">
+      <img src="https://cdn.aarp.net/content/dam/aarp/health/drugs_supplements/2022/04/1140-iv-drip-therapy-esp.jpg" alt="Aplicación de sueros vitamínicos">
+      <h3>Aplicación de sueros vitamínicos</h3>
+      <p>Terapia intravenosa de vitaminas y minerales.</p>
+      <div class="note">Requiere prescripción médica</div>
+    </div>
+    
+    <div class="card">
+      <img src="https://dasalud.es/wp-content/uploads/2023/07/Como-hacer-cura-herida-tras-operacion-quirurgica.jpeg" alt="Cuidado de heridas">
+      <h3>Cuidado y desinfección de heridas</h3>
+      <p>Limpieza, desinfección y apósito con técnica aséptica.</p>
+    </div>
+    
+    <div class="card">
+      <img src="https://cdn-ildfijn.nitrocdn.com/HGdQPNtgZBFtONqfOPIWsDVtUAvqdpJd/assets/images/optimized/rev-935b5a5/allseniors.org/wp-content/uploads/2025/04/In-Home-Care-Placement-for-Aging-at-Home-1024x768.jpg" alt="Acompañamiento adulto mayor">
+      <h3>Acompañamiento al adulto mayor</h3>
+      <p>Compañía, ayuda en actividades diarias y apoyo emocional.</p>
+    </div>
+
+    <!-- Otros sin imagen adicional por ahora -->
+    <div class="card">
+      <h3>Aplicación de medicamentos</h3>
+      <p>Administración segura siguiendo prescripción médica vigente.</p>
+      <div class="note">Requiere prescripción médica</div>
+    </div>
+    
+    <div class="card">
+      <h3>Retiro de sonda Foley</h3>
+      <p>Procedimiento higiénico y cuidadoso por personal capacitado.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://udocz-cdn-hop.b-cdn.net/documents_html/448326-bf1aa9339df94817129546b75554a14c/bg1.jpg" alt="Baño de esponja">
+      <h3>Baño de esponja</h3>
+      <p>Higiene completa en cama para pacientes con movilidad reducida.</p>
+    </div>
+  </div>
+
+  <h2 style="margin-top: 7rem;">Joyería y Accesorios Nice</h2>
+  <div class="services-grid">
+    <div class="card" style="grid-column: 1 / -1; text-align: center;">
+      <h3>Próximamente más piezas exclusivas</h3>
+      <p style="margin: 1.5rem 0; font-size: 1.15rem;">
+        Piezas únicas • Diseños minimalistas y elegantes<br>
+        Acero quirúrgico • Plata .925 • Chapado en oro 18k
+      </p>
+      <p style="color: #26c6a0; font-weight: 500; font-size: 1.2rem;">
+        ¡Pronto abrimos catálogo completo!
+      </p>
+    </div>
+  </div>
+
+  <!-- Nueva sección: Imágenes de lo realizado -->
+  <div class="gallery-section">
+    <h2>Algunos trabajos realizados</h2>
+    <p style="text-align:center; max-width:800px; margin:0 auto 2rem; color:#b0b0b0;">
+      Ejemplos reales de la atención y cuidados que brindamos en domicilio en Tijuana y zona.
+    </p>
+    <div class="gallery-grid">
+      <div>
+        <img src="https://thumbs.dreamstime.com/b/enfermera-tomando-la-presi%C3%B3n-arterial-de-un-anciano-en-una-cama-hospital-prestador-atenci%C3%B3n-salud-mide-paciente-centro-m%C3%A9dico-384941804.jpg" alt="Control de signos vitales">
+        <div class="gallery-caption">Control de signos vitales en domicilio</div>
+      </div>
+      <div>
+        <img src="https://image.tuasaude.com/media/article/rp/rj/toma-de-glucemia-capilar_46150.jpg?width=686&height=487" alt="Medición de glucosa">
+        <div class="gallery-caption">Toma de glicemia capilar</div>
+      </div>
+      <div>
+        <img src="https://cdn.aarp.net/content/dam/aarp/health/drugs_supplements/2022/04/1140-iv-drip-therapy-esp.jpg" alt="Sueros vitamínicos">
+        <div class="gallery-caption">Aplicación de suero vitamínico</div>
+      </div>
+      <div>
+        <img src="https://dasalud.es/wp-content/uploads/2023/07/Como-hacer-cura-herida-tras-operacion-quirurgica.jpeg" alt="Cura de herida">
+        <div class="gallery-caption">Cuidado y desinfección de heridas</div>
+      </div>
+      <div>
+        <img src="https://cdn-ildfijn.nitrocdn.com/HGdQPNtgZBFtONqfOPIWsDVtUAvqdpJd/assets/images/optimized/rev-935b5a5/allseniors.org/wp-content/uploads/2025/04/In-Home-Care-Placement-for-Aging-at-Home-1024x768.jpg" alt="Acompañamiento">
+        <div class="gallery-caption">Acompañamiento y apoyo al adulto mayor</div>
+      </div>
+      <div>
+        <img src="https://udocz-cdn-hop.b-cdn.net/documents_html/448326-bf1aa9339df94817129546b75554a14c/bg1.jpg" alt="Baño en cama">
+        <div class="gallery-caption">Baño de esponja / higiene en cama</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reseñas -->
+  <div class="reviews-section">
+    <h2>Tu opinión nos importa</h2>
+    <p style="text-align:center; max-width:700px; margin:0 auto 2rem; color:#b0b0b0;">
+      Déjanos tus comentarios, sugerencias o experiencias con nuestros servicios.
+    </p>
+    <form action="#" method="post">
+      <input type="text" placeholder="Tu nombre" required>
+      <input type="email" placeholder="Tu correo electrónico" required>
+      <textarea rows="5" placeholder="Escribe tu comentario o reseña aquí..." required></textarea>
+      <button type="submit">Enviar comentario</button>
+    </form>
+  </div>
+
+</main>
+
+<footer>
+  <p>PS Cuidados Profesionales en el Hogar & Nice Accesorios</p>
+  <p class="contact">¿Interesado? Escríbenos para cotización personalizada</p>
+ 
+  
+  <div class="social-icons">
+    <a href="https://www.facebook.com/?locale=es_LA" target="_blank"><img src="face.png" alt="" width="5%"></a>
+    <a href="https://instagram.com/tu_usuario" target="_blank"><img src="insta.png" alt="" width="5%"></a>
+    <a href="https://wa.me/526641234567" target="_blank"><img src="whas.png" alt="" width="5%"></i></a>
+    <!-- Cambia por tus enlaces reales -->
+  </div>
+  
+  <p style="margin-top:1rem;">© 2026 PS Cuidados • Tijuana, Baja California</p>
+</footer>
+
+<script>
+  window.addEventListener('load', () => {
+    document.body.style.opacity = '0';
+    setTimeout(() => {
+      document.body.style.transition = 'opacity 1.2s ease';
+      document.body.style.opacity = '1';
+    }, 100);
+  });
+</script>
+
+</body>
+</html>
