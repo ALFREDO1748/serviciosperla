@@ -15,10 +15,22 @@
     * { margin:0; padding:0; box-sizing:border-box; }
     body {
       font-family: 'Inter', sans-serif;
-      background: #0f0f0f;
+      
       color: #e0e0e0;
       line-height: 1.6;
+
+
+      
+  background: linear-gradient(132deg, #000000,#00ff00, #0000ff,#e60073,#ff0000,#ffffff);
+  background-size: 400% 400%;
+  animation: BackgroundGradient 15s ease infinite;
+
+
+
+
+
     }
+
     header {
       position: relative;
       height: 100vh;
@@ -35,7 +47,7 @@
       position: relative;
       width: 280px;
       height: 280px;
-      margin-bottom: 2.5rem;
+      margin-bottom: 1.5rem;
     }
     .logo {
       width: 100%;
@@ -54,8 +66,8 @@
       text-shadow: 0 0 40px rgba(38,198,160,0.25);
       transition: all 1.2s ease;
     }
-    .tagline { font-size: 1.35rem; font-weight: 300; color: #a0a0a0; letter-spacing: 3px; text-transform: uppercase; margin-top: 1rem; }
-    .subtitle { font-size: 1.1rem; max-width: 580px; margin: 2.5rem auto 3.5rem; color: #b0b0b0; padding: 0 1.5rem; }
+    .tagline { font-size: 1.35rem; font-weight: 300; color: #a0a0a0; letter-spacing: 1px; text-transform: uppercase; margin-top: 0px; }
+    .subtitle { font-size: 1.1rem; max-width: 580px; margin: 1.5rem auto 3.5rem; color: #b0b0b0; padding: 0 0.5rem; }
     main { padding: 5rem 1.5rem; max-width: 1200px; margin: 0 auto; }
     h2 {
       font-family: 'Playfair Display', serif;
@@ -197,19 +209,113 @@
       .logo { font-size: 28vw; }
       h2 { font-size: 2.2rem; }
     }
+
+
+    @keyframes BackgroundGradient {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+
+
+
+    @import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+section .wave {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #4973ff;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+}
+section .wave span {
+  content: "";
+  position: absolute;
+  width: 325vh;
+  height: 325vh;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -75%);
+  background: #000;
+}
+.content {
+  position: relative;
+  z-index: 1;
+  font-size: 4em;
+  letter-spacing: 2px;
+  color: #fff;
+  
+}
+
+.content img {
+  margin-bottom: -80px;
+}
+
+section .wave span:nth-child(1) {
+  border-radius: 45%;
+  background: rgba(20, 20, 20, 1);
+  animation: animate 5s linear infinite;
+}
+
+section .wave span:nth-child(2) {
+  border-radius: 40%;
+  background: rgba(20, 20, 20, 0.5);
+  animation: animate 10s linear infinite;
+}
+section .wave span:nth-child(3) {
+  border-radius: 42.5%;
+  background: rgba(20, 20, 20, 0.5);
+  animation: animate 15s linear infinite;
+}
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg);
+  }
+}
   </style>
 </head>
 <body>
 
 <header>
-  <div class="logo-container">
-    <div class="logo"> <img src="ps.png" alt="logo" width="200%"></div>
+  <section>
+  <div class="wave">
+    <span></span>
+    <span></span>
+    <span></span>
   </div>
-  <div class="tagline">Servicios de Enfermeria • Nice Accesorios</div>
+  <div class="content">
+    <img src="ps.png" alt="" width="40%" >
+    
+  <div class="tagline">Cuidados Profesionales • Nice Accesorios</div>
   <p class="subtitle">
-    Atención personalizada en el hogar + Joyería y accesorios con estilo
+    Atención personalizada en el hogar + joyería y accesorios con estilo
   </p>
+  </div>
+
+  </section>
 </header>
+
 
 <main>
   <h2>Servicios de Enfermeria</h2>
